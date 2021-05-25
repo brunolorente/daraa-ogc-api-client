@@ -83,8 +83,8 @@
                         "description": "The maximum number of items to present in the response document.",
                         "required": false,
                         "schema": {
-                            "type": "number",
-                            "format": "integer",
+                            "type": "integer",
+                            "format": "int32",
                             "minimum": 0,
                             "default": 20
                         }
@@ -95,8 +95,8 @@
                         "description": "The zero-based index within the result set from which the server will begin presenting results in the response document.  If offset is greater or equal to the number of items in the result set, the server will return an empty list.",
                         "required": false,
                         "schema": {
-                            "type": "number",
-                            "format": "integer",
+                            "type": "integer",
+                            "format": "int32",
                             "minimum": 0,
                             "default": 0
                         }
@@ -481,12 +481,12 @@
                         "required": false,
                         "schema": {
                             "type": "array",
+                            "maxItems": 4,
+                            "minItems": 4,
                             "items": {
                                 "maximum": 180,
                                 "minimum": 180,
-                                "maxItems": 4,
-                                "minItems": 4,
-                                "type": "number"
+                                "type": "integer"
                             }
                         },
                         "style": "form",
@@ -633,7 +633,7 @@
                         "required": false,
                         "allowEmptyValue": true,
                         "schema": {
-                            "type": "number"
+                            "type": "integer"
                         },
                         "style": "form",
                         "explode": true
@@ -1081,7 +1081,7 @@
                         "required": false,
                         "allowEmptyValue": true,
                         "schema": {
-                            "type": "number"
+                            "type": "integer"
                         },
                         "style": "form",
                         "explode": true
@@ -1414,8 +1414,8 @@
                         "description": "The maximum number of items to present in the response document.",
                         "required": false,
                         "schema": {
-                            "type": "number",
-                            "format": "integer",
+                            "type": "integer",
+                            "format": "int32",
                             "minimum": 0,
                             "default": 20
                         }
@@ -1426,8 +1426,8 @@
                         "description": "The zero-based index within the result set from which the server will begin presenting results in the response document.  If offset is greater or equal to the number of items in the result set, the server will return an empty list.",
                         "required": false,
                         "schema": {
-                            "type": "number",
-                            "format": "integer",
+                            "type": "integer",
+                            "format": "int32",
                             "minimum": 0,
                             "default": 0
                         }
@@ -1806,8 +1806,8 @@
                         "in": "query",
                         "description": "The width (in pixels) of the map.  If unspecified, a reasonable default will be used.",
                         "schema": {
-                            "type": "number",
-                            "format": "integer",
+                            "type": "integer",
+                            "format": "int32",
                             "minimum": 1,
                             "maximum": 8000
                         },
@@ -1818,8 +1818,8 @@
                         "in": "query",
                         "description": "The height (in pixels) of the map.  If unspecified, a reasonable default will be used.",
                         "schema": {
-                            "type": "number",
-                            "format": "integer",
+                            "type": "integer",
+                            "format": "int32",
                             "minimum": 1,
                             "maximum": 6000
                         },
@@ -2002,8 +2002,8 @@
                         "in": "query",
                         "description": "The width (in pixels) of the map.  If unspecified, a reasonable default will be used.",
                         "schema": {
-                            "type": "number",
-                            "format": "integer",
+                            "type": "integer",
+                            "format": "int32",
                             "minimum": 1,
                             "maximum": 8000
                         },
@@ -2014,8 +2014,8 @@
                         "in": "query",
                         "description": "The height (in pixels) of the map.  If unspecified, a reasonable default will be used.",
                         "schema": {
-                            "type": "number",
-                            "format": "integer",
+                            "type": "integer",
+                            "format": "int32",
                             "minimum": 1,
                             "maximum": 6000
                         },
@@ -2193,8 +2193,8 @@
                         "in": "query",
                         "description": "The width (in pixels) of the map.  If unspecified, a reasonable default will be used.",
                         "schema": {
-                            "type": "number",
-                            "format": "integer",
+                            "type": "integer",
+                            "format": "int32",
                             "minimum": 1,
                             "maximum": 8000
                         },
@@ -2205,8 +2205,8 @@
                         "in": "query",
                         "description": "The height (in pixels) of the map.  If unspecified, a reasonable default will be used.",
                         "schema": {
-                            "type": "number",
-                            "format": "integer",
+                            "type": "integer",
+                            "format": "int32",
                             "minimum": 1,
                             "maximum": 6000
                         },
@@ -2642,8 +2642,8 @@
                         "in": "query",
                         "description": "The width (in pixels) of the map.  If unspecified, a reasonable default will be used.",
                         "schema": {
-                            "type": "number",
-                            "format": "integer",
+                            "type": "integer",
+                            "format": "int32",
                             "minimum": 1,
                             "maximum": 8000
                         },
@@ -2654,8 +2654,8 @@
                         "in": "query",
                         "description": "The height (in pixels) of the map.  If unspecified, a reasonable default will be used.",
                         "schema": {
-                            "type": "number",
-                            "format": "integer",
+                            "type": "integer",
+                            "format": "int32",
                             "minimum": 1,
                             "maximum": 6000
                         },
@@ -4243,7 +4243,7 @@
                                     "minItems": 4,
                                     "maxItems": 6,
                                     "items": {
-                                        "type": "number"
+                                        "type": "integer"
                                     }
                                 },
                                 "example": [
@@ -4427,7 +4427,9 @@
                         }
                     }
                 },
-                "additionalProperties": true
+                "additionalProperties": {
+                    "type" : "string"
+                }
             },
             "landingPage-xml": {
                 "title": "Landing Page Schema (XML)",
@@ -4958,8 +4960,8 @@
                 "in": "query",
                 "description": "The number of samples high to scale the requested coverage subset to.  This is an alternative to using the scaleSize parameter.",
                 "schema": {
-                    "type": "number",
-                    "format": "integer",
+                    "type": "integer",
+                    "format": "int32",
                     "minimum": 1
                 }
             },
@@ -4968,8 +4970,8 @@
                 "in": "query",
                 "description": "The number of samples wide to scale the requested coverage subset to.  This is an alternative to using the scaleSize parameter.",
                 "schema": {
-                    "type": "number",
-                    "format": "integer",
+                    "type": "integer",
+                    "format": "int32",
                     "minimum": 1
                 }
             },
@@ -5209,7 +5211,7 @@
                     "format": "double",
                     "minimum": 0,
                     "exclusiveMinimum": true,
-                    "default": 1
+                    "default": 1.0
                 }
             },
             "scale-size": {
@@ -5754,11 +5756,6 @@
             "sourceImage": {
                 "description": "Metadata about a source image of a collection, including links to the actual source image file(s).",
                 "content": {
-                    "application/stac+json": {
-                        "schema": {
-                            "$ref": "https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-images/1.0.0#/components/schemas/stacItemImage"
-                        }
-                    },
                     "text/html": {
                         "schema": {
                             "$ref": "#/components/schemas/html"
@@ -5769,11 +5766,6 @@
             "sourceImages": {
                 "description": "The set of source images of a collection.",
                 "content": {
-                    "application/stac+json": {
-                        "schema": {
-                            "$ref": "https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-images/1.0.0#/components/schemas/stacCollection"
-                        }
-                    },
                     "text/html": {
                         "schema": {
                             "$ref": "#/components/schemas/html"
